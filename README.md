@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# bpo
 
-## Getting Started
+Homepage for a BPO / call-center business: nine full-screen sections with cinematic
+vertical navigation, built with Next.js (App Router), TypeScript and Tailwind CSS.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts: `npm run build` (production build), `npm run start` (serve the build),
+`npm run lint`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How it works
 
-## Learn More
+- One section is shown at a time. Mouse wheel, trackpad, keyboard (↑/↓, Page Up/Down,
+  Space, Home/End), touch swipes and the fixed bottom arrows move between sections.
+- `src/components/layout/SectionNavigation.tsx` handles input and transition locking.
+- `src/components/layout/FitToScreen.tsx` scales a section down when its content is
+  taller than the screen, so sections never scroll.
+- Each section lives in `src/components/home/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Editing content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All copy, contact details and office addresses are in `src/lib/content.ts`.
+They are placeholders — replace them with real, verified information before launch.
