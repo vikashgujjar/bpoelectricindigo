@@ -4,11 +4,10 @@
 @custom-variant short (@media (min-width: 1024px) and (max-height: 820px));
 
 @theme {
-  --color-brand: #ffe11b;
-  --color-brand-deep: #f2d200;
+  --color-primary: #635bff; /* Electric Indigo — buttons, links, brand identity */
   --color-ink: #0b0b0b;
   --color-ink-soft: #1a1a1a;
-  --color-cream: #fff8d9;
+  --color-light: #f5f4ff; /* indigo-tinted off-white */
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --ease-cinematic: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -36,8 +35,14 @@ body {
   font-family: var(--font-sans);
 }
 
+:root {
+  --focus: #fff;
+}
+[data-theme-active="light"] {
+  --focus: var(--color-primary);
+}
 :focus-visible {
-  outline: 3px solid #2e3a8f;
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -55,16 +60,16 @@ body {
     visibility 0s linear var(--vs-duration);
 }
 
-.vs-section[data-theme="yellow"] {
-  background: var(--color-brand);
-  color: var(--color-ink);
+.vs-section[data-theme="primary"] {
+  background: var(--color-primary);
+  color: #fff;
 }
 .vs-section[data-theme="black"] {
   background: var(--color-ink);
   color: #fff;
 }
-.vs-section[data-theme="cream"] {
-  background: var(--color-cream);
+.vs-section[data-theme="light"] {
+  background: var(--color-light);
   color: var(--color-ink);
 }
 

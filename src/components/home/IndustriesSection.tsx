@@ -6,9 +6,9 @@ import IndustriesCarousel from "./IndustriesCarousel";
 export default function IndustriesSection() {
   return (
     <Container>
-      <Eyebrow className="reveal text-brand">Industries</Eyebrow>
+      <Eyebrow className="reveal text-primary">Industries</Eyebrow>
       <AnimatedHeading
-        parts={["Our Industry", { text: "Reach", className: "text-brand" }]}
+        parts={["Our Industry", { text: "Reach", className: "text-primary" }]}
         start={1}
         className="mt-4 text-[2.3rem] font-extrabold leading-[0.98] tracking-[-0.03em] sm:mt-5 sm:text-6xl"
       />

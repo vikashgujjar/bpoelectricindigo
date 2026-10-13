@@ -6,7 +6,7 @@ import { useSectionNav } from "./SectionNavigation";
 /** Fixed up/down arrows, next-section pill and progress dots — visible on every section. */
 export default function BottomControls() {
   const { sections, active, theme, goTo, next, prev } = useSectionNav();
-  const dark = theme === "black";
+  const dark = theme !== "light";
   const isFirst = active === 0;
   const isLast = active === sections.length - 1;
 

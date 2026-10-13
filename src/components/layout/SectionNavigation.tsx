@@ -14,7 +14,7 @@ import Header from "./Header";
 import BottomControls from "./BottomControls";
 import FitToScreen from "./FitToScreen";
 
-export type SectionTheme = "yellow" | "black" | "cream";
+export type SectionTheme = "primary" | "black" | "light";
 
 export type SectionConfig = {
   id: string;
@@ -138,6 +138,8 @@ export default function SectionNavigation({ sections }: { sections: SectionConfi
     let lastWheelAt = 0;
     let lastWheelAbs = 0;
     let gestureConsumed = false;
+    // Set once a stream shows trackpad-style deltas; stays set until the scrolling pauses.
+    let trackpadStream = false;
 
     const isIgnored = (target: EventTarget | null) =>
       target instanceof Element && target.closest(IGNORE_SELECTOR) !== null;
@@ -156,10 +158,18 @@ export default function SectionNavigation({ sections }: { sections: SectionConfi
       const inertiaTail = gestureConsumed && gap < WHEEL_INERTIA_MAX_GAP_MS && decaying;
       if (gap > WHEEL_GESTURE_GAP_MS && !inertiaTail) {
         gestureConsumed = false;
+        trackpadStream = false;
         wheelAccum = 0;
       }
       lastWheelAt = now;
       lastWheelAbs = abs;
+
+      // Fractional or small pixel deltas only come from trackpads; after one, the rest of
+      // the stream is treated as trackpad even if the browser coalesces events into a
+      // larger whole number under load.
+      const notchLike =
+        e.deltaMode !== 0 || (abs >= MOUSE_NOTCH_MIN_DELTA && Number.isInteger(e.deltaY));
+      if (!notchLike) trackpadStream = true;
 
       if (lockedRef.current) return;
 
@@ -167,9 +177,7 @@ export default function SectionNavigation({ sections }: { sections: SectionConfi
       // with no inertia. Once the previous transition has finished, a non-decaying notch
       // is a fresh intent even mid-stream, so continuous rolling keeps moving one section
       // per transition instead of stalling until the user pauses.
-      const mouseNotch =
-        e.deltaMode !== 0 || (abs >= MOUSE_NOTCH_MIN_DELTA && Number.isInteger(e.deltaY));
-      if (mouseNotch && !decaying) {
+      if (notchLike && !trackpadStream && !decaying) {
         gestureConsumed = true;
         wheelAccum = 0;
         if (e.deltaY > 0) next();

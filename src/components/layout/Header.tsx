@@ -18,7 +18,8 @@ const navItems = [
 export default function Header() {
   const { theme, goTo, sections, active, setPaused } = useSectionNav();
   const [menuOpen, setMenuOpen] = useState(false);
-  const dark = theme === "black";
+  // Indigo and black sections both use light text.
+  const dark = theme !== "light";
   const activeId = sections[active].id;
 
   // Section navigation is paused while the mobile menu covers the page.
@@ -99,7 +100,7 @@ export default function Header() {
               navigate("contact");
             }}
             className={`hidden rounded-full px-5 py-2.5 text-[0.94rem] font-bold transition-colors sm:inline-flex ${
-              dark ? "bg-brand text-ink hover:bg-white" : "bg-ink text-white hover:bg-ink/85"
+              dark ? "bg-white text-primary hover:bg-white/85" : "bg-primary text-white hover:bg-primary/85"
             }`}
           >
             Book a Call Now
@@ -126,16 +127,16 @@ export default function Header() {
           aria-modal="true"
           aria-label="Menu"
           data-nav-ignore
-          className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-brand px-4 pb-8 text-ink sm:px-8"
+          className="fixed inset-0 z-[60] flex flex-col overflow-y-auto bg-primary px-4 pb-8 text-white sm:px-8"
         >
           <div className="flex h-[var(--header-h)] shrink-0 items-center justify-between">
-            <Brand />
+            <Brand onDark />
             <button
               type="button"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
               autoFocus
-              className="grid h-11 w-11 place-items-center rounded-full bg-ink text-white"
+              className="grid h-11 w-11 place-items-center rounded-full bg-white text-primary"
             >
               <X className="h-5 w-5" aria-hidden />
             </button>
@@ -146,7 +147,7 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={() => navigate(s.id)}
-                  className="flex w-full items-baseline gap-4 rounded-2xl px-3 py-3 text-left text-3xl font-extrabold tracking-tight hover:bg-ink/5"
+                  className="flex w-full items-baseline gap-4 rounded-2xl px-3 py-3 text-left text-3xl font-extrabold tracking-tight hover:bg-white/10"
                 >
                   <span className="w-8 text-sm font-bold opacity-50">
                     {String(i + 1).padStart(2, "0")}
@@ -166,7 +167,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => navigate("contact")}
-              className="rounded-full bg-ink px-6 py-4 text-lg font-bold text-white"
+              className="rounded-full bg-white px-6 py-4 text-lg font-bold text-primary"
             >
               Book a Call Now
             </button>

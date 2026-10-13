@@ -34,13 +34,13 @@ export default function AboutSection() {
             <li
               key={pillar.id}
               className={`reveal-scale flex flex-col rounded-[1.5rem] border-[3px] border-ink p-4 shadow-[6px_6px_0_0_#0b0b0b] sm:p-6 ${
-                i === 0 ? "bg-brand lg:row-span-2 lg:justify-end" : i === 1 ? "bg-ink text-white" : "bg-white"
+                i === 0 ? "bg-primary text-white lg:row-span-2 lg:justify-end" : i === 1 ? "bg-ink text-white" : "bg-white"
               }`}
               style={delay(4 + i)}
             >
               <span
                 className={`grid h-10 w-10 place-items-center rounded-full sm:h-12 sm:w-12 ${
-                  i === 1 ? "bg-brand text-ink" : "bg-ink text-brand"
+                  i === 0 ? "bg-white text-primary" : "bg-primary text-white"
                 } ${i === 0 ? "lg:mb-auto" : ""}`}
               >
                 <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />

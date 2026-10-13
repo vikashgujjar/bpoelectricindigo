@@ -15,9 +15,9 @@ export default function ContactSection() {
     <Container>
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <Eyebrow className="reveal text-brand">Contact Us</Eyebrow>
+          <Eyebrow className="reveal text-primary">Contact Us</Eyebrow>
           <AnimatedHeading
-            parts={["Book a", { text: "Call", className: "text-brand" }, "Now"]}
+            parts={["Book a", { text: "Call", className: "text-primary" }, "Now"]}
             start={1}
             className="mt-4 whitespace-nowrap text-[min(10.5vw,4.5rem)] font-extrabold leading-none tracking-[-0.035em] sm:mt-5"
           />
@@ -38,8 +38,8 @@ export default function ContactSection() {
                 href={href}
                 className={`flex h-full items-center gap-4 rounded-2xl px-5 py-3.5 ${
                   i === 0
-                    ? "bg-brand text-ink hover:bg-white"
-                    : "border-2 border-white/15 text-white hover:border-brand"
+                    ? "bg-primary text-white hover:bg-white hover:text-ink"
+                    : "border-2 border-white/15 text-white hover:border-primary"
                 }`}
               >
                 <Icon className="h-5 w-5 shrink-0" aria-hidden />
@@ -57,9 +57,9 @@ export default function ContactSection() {
               className="reveal-right flex gap-4 rounded-2xl border-2 border-white/15 px-5 py-3.5"
               style={delay(3 + i)}
             >
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand" aria-hidden />
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden />
               <div>
-                <h3 className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand">
+                <h3 className="text-sm font-extrabold uppercase tracking-[0.12em] text-primary">
                   {office.region}
                 </h3>
                 <address className="mt-0.5 text-base not-italic text-white/80">{office.address}</address>

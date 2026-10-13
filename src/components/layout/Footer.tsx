@@ -2,7 +2,7 @@ import Brand from "@/components/ui/Brand";
 import SectionLink from "./SectionLink";
 import { brand, industries, services } from "@/lib/content";
 
-const linkClass = "text-base text-white/70 transition-colors hover:text-brand";
+const linkClass = "text-base text-white/70 transition-colors hover:text-primary";
 const headingClass = "text-base font-extrabold text-white";
 
 const companyLinks = [
@@ -67,7 +67,7 @@ export default function Footer() {
           {/* Placeholder legal pages — point these at real pages when they exist. */}
           {["Privacy Policy", "Terms of Use", "Cookie Settings"].map((label) => (
             <li key={label}>
-              <a href="#" className="hover:text-brand">
+              <a href="#" className="hover:text-primary">
                 {label}
               </a>
             </li>

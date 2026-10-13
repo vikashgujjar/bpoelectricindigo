@@ -8,7 +8,7 @@ function MagazineCover() {
   return (
     <div className="relative mx-auto aspect-[3/4] w-full max-w-[340px] short:max-w-[290px]" aria-hidden>
       <div className="absolute inset-0 translate-x-5 translate-y-4 rotate-[7deg] rounded-[1.5rem] bg-white/10" />
-      <div className="absolute inset-0 -rotate-[4deg] overflow-hidden rounded-[1.5rem] bg-brand p-6 text-ink shadow-2xl">
+      <div className="absolute inset-0 -rotate-[4deg] overflow-hidden rounded-[1.5rem] bg-primary p-6 text-white shadow-2xl">
         <div className="flex items-center justify-between text-[0.65rem] font-extrabold uppercase tracking-[0.2em]">
           <span>{brand.name}</span>
           <span>Issue 01</span>
@@ -18,10 +18,10 @@ function MagazineCover() {
           <br />
           Journal
         </p>
-        <span className="mt-5 inline-block rounded-full bg-ink px-3 py-1 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-brand">
+        <span className="mt-5 inline-block rounded-full bg-primary px-3 py-1 text-[0.65rem] font-extrabold uppercase tracking-[0.18em] text-white">
           This month
         </span>
-        <ul className="absolute inset-x-6 bottom-6 space-y-2 border-t-2 border-ink pt-4 text-sm font-bold">
+        <ul className="absolute inset-x-6 bottom-6 space-y-2 border-t-2 border-white/40 pt-4 text-sm font-bold">
           <li>Scaling support without losing the human touch</li>
           <li>Five metrics every CX leader should track</li>
         </ul>
@@ -34,9 +34,9 @@ export default function InsightsSection() {
   return (
     <Container className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
       <div>
-        <Eyebrow className="reveal text-brand">Insights</Eyebrow>
+        <Eyebrow className="reveal text-primary">Insights</Eyebrow>
         <AnimatedHeading
-          parts={["The CX", { text: "Journal", className: "text-brand" }]}
+          parts={["The CX", { text: "Journal", className: "text-primary" }]}
           start={1}
           className="mt-4 text-[3.6rem] font-extrabold uppercase leading-[0.88] tracking-[-0.045em] sm:mt-5 sm:text-8xl"
         />
@@ -51,7 +51,7 @@ export default function InsightsSection() {
         </p>
         <a
           href={`mailto:${contact.email}?subject=Subscribe%20to%20The%20CX%20Journal`}
-          className="reveal mt-7 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 font-bold text-ink hover:bg-white sm:mt-8 sm:px-7 sm:py-4"
+          className="reveal mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 font-bold text-white hover:bg-white hover:text-ink sm:mt-8 sm:px-7 sm:py-4"
           style={delay(5)}
         >
           Subscribe for Updates <ArrowRight className="h-4 w-4" aria-hidden />

@@ -12,7 +12,7 @@ export default function Brand({ onDark = false, className = "" }: Props) {
     >
       <span
         className={`rounded-lg px-2 py-1 text-[0.95em] transition-colors duration-300 delay-[380ms] ${
-          onDark ? "bg-brand text-ink" : "bg-ink text-brand"
+          onDark ? "bg-white text-primary" : "bg-primary text-white"
         }`}
       >
         BPO

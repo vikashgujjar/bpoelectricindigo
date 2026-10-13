@@ -40,7 +40,7 @@ export default function IndustriesCarousel({ industries }: { industries: Industr
         role="group"
         aria-roledescription="carousel"
         aria-label="Industries"
-        className="relative flex min-h-[260px] flex-col overflow-hidden rounded-[1.5rem] bg-brand p-6 text-ink sm:min-h-[340px] sm:rounded-[2rem] sm:p-10"
+        className="relative flex min-h-[260px] flex-col overflow-hidden rounded-[1.5rem] bg-primary p-6 text-white sm:min-h-[340px] sm:rounded-[2rem] sm:p-10"
         onTouchStart={(e) => {
           touchX.current = e.touches[0].clientX;
         }}
@@ -57,7 +57,7 @@ export default function IndustriesCarousel({ industries }: { industries: Industr
           aria-hidden
         />
         <div className="flex items-center justify-between">
-          <span className="grid h-14 w-14 place-items-center rounded-2xl bg-ink text-brand">
+          <span className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-white">
             <Icon className="h-7 w-7" aria-hidden />
           </span>
           <span className="text-sm font-extrabold tabular-nums" aria-live="polite">
@@ -67,7 +67,7 @@ export default function IndustriesCarousel({ industries }: { industries: Industr
 
         <div key={current.id} className="mt-auto pt-8 motion-safe:animate-[industry-in_500ms_cubic-bezier(0.22,1,0.36,1)]">
           <h3 className="text-3xl font-extrabold tracking-[-0.02em] sm:text-5xl">{current.title}</h3>
-          <p className="mt-3 max-w-md text-base font-medium leading-relaxed text-ink/75 sm:text-lg">
+          <p className="mt-3 max-w-md text-base font-medium leading-relaxed text-white/80 sm:text-lg">
             {current.body}
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function IndustriesCarousel({ industries }: { industries: Industr
                 aria-pressed={selected}
                 className={`flex w-full items-center gap-3 rounded-full border px-4 py-2.5 text-left text-sm font-bold transition-colors sm:text-base lg:px-5 lg:py-3 ${
                   selected
-                    ? "border-brand bg-brand text-ink"
+                    ? "border-primary bg-primary text-white"
                     : "border-white/15 text-white hover:border-white/40"
                 }`}
               >

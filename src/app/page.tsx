@@ -10,14 +10,14 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import ContactSection from "@/components/home/ContactSection";
 
 const sections: SectionConfig[] = [
-  { id: "hero", label: "Home", theme: "yellow", content: <HeroSection /> },
+  { id: "hero", label: "Home", theme: "primary", content: <HeroSection /> },
   { id: "services", label: "Services", theme: "black", content: <ServicesSection /> },
-  { id: "stats", label: "Our Impact", theme: "yellow", content: <StatsSection /> },
-  { id: "about", label: "About Us", theme: "cream", content: <AboutSection /> },
+  { id: "stats", label: "Our Impact", theme: "primary", content: <StatsSection /> },
+  { id: "about", label: "About Us", theme: "light", content: <AboutSection /> },
   { id: "industries", label: "Industries", theme: "black", content: <IndustriesSection /> },
-  { id: "why-us", label: "Why Choose Us", theme: "yellow", content: <WhyChooseUsSection /> },
+  { id: "why-us", label: "Why Choose Us", theme: "primary", content: <WhyChooseUsSection /> },
   { id: "insights", label: "Insights", theme: "black", content: <InsightsSection /> },
-  { id: "testimonials", label: "Testimonials", theme: "cream", content: <TestimonialsSection /> },
+  { id: "testimonials", label: "Testimonials", theme: "light", content: <TestimonialsSection /> },
   { id: "contact", label: "Contact", theme: "black", content: <ContactSection /> },
 ];
 

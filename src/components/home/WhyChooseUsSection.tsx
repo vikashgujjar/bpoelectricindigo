@@ -23,7 +23,7 @@ export default function WhyChooseUsSection() {
         />
         <SectionLink
           to="contact"
-          className="reveal mt-6 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-bold text-white hover:bg-ink/85 sm:mt-8 sm:px-7 sm:py-4"
+          className="reveal mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-primary hover:bg-ink hover:text-white sm:mt-8 sm:px-7 sm:py-4"
           style={delay(3)}
         >
           Book a Free Consultation <ArrowRight className="h-4 w-4" aria-hidden />
@@ -36,10 +36,10 @@ export default function WhyChooseUsSection() {
           return (
             <li
               key={item.id}
-              className={`${i % 2 ? "reveal-right" : "reveal-left"} rounded-[1.25rem] border-[3px] border-ink bg-brand p-4 shadow-[4px_4px_0_0_#0b0b0b] sm:rounded-[1.75rem] sm:p-7 sm:shadow-[6px_6px_0_0_#0b0b0b]`}
+              className={`${i % 2 ? "reveal-right" : "reveal-left"} rounded-[1.25rem] border-[3px] border-ink bg-white p-4 text-ink shadow-[4px_4px_0_0_#0b0b0b] sm:rounded-[1.75rem] sm:p-7 sm:shadow-[6px_6px_0_0_#0b0b0b]`}
               style={delay(3 + i)}
             >
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-ink text-brand sm:h-12 sm:w-12">
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-primary text-white sm:h-12 sm:w-12">
                 <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
               </span>
               <h3 className="mt-3 text-[0.98rem] font-extrabold leading-tight tracking-tight sm:mt-6 sm:text-2xl">

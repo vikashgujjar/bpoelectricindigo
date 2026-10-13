@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
       <Eyebrow className="reveal">Testimonials</Eyebrow>
       <figure className="mt-6 sm:mt-8">
         <Quote
-          className="reveal-tilt h-12 w-12 fill-brand text-ink sm:h-20 sm:w-20"
+          className="reveal-tilt h-12 w-12 fill-primary/15 text-primary sm:h-20 sm:w-20"
           strokeWidth={1.5}
           style={delay(1)}
           aria-hidden
@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
           “{testimonial.quote}”
         </blockquote>
         <figcaption className="reveal-left mt-6 flex items-center gap-4 sm:mt-8" style={delay(4)}>
-          <span className="h-[3px] w-12 bg-ink" aria-hidden />
+          <span className="h-[3px] w-12 bg-primary" aria-hidden />
           <span className="text-sm font-extrabold sm:text-lg">{testimonial.author}</span>
         </figcaption>
       </figure>
