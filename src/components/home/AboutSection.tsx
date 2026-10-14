@@ -27,28 +27,30 @@ export default function AboutSection() {
         </p>
       </div>
 
-      <ul className="grid grid-cols-3 gap-3 sm:gap-4 lg:grid-cols-2">
+      <ul className="grid gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-2">
         {about.pillars.map((pillar, i) => {
           const Icon = icons[pillar.id];
           return (
             <li
               key={pillar.id}
-              className={`reveal-scale flex flex-col rounded-[1.5rem] border-[3px] border-ink p-4 shadow-[6px_6px_0_0_#0b0b0b] sm:p-6 ${
+              className={`reveal-scale flex items-center gap-4 rounded-[1.25rem] border-[3px] border-ink p-4 shadow-[5px_5px_0_0_#0b0b0b] sm:flex-col sm:items-start sm:gap-0 sm:rounded-[1.5rem] sm:p-6 sm:shadow-[6px_6px_0_0_#0b0b0b] ${
                 i === 0 ? "bg-primary text-white lg:row-span-2 lg:justify-end" : i === 1 ? "bg-ink text-white" : "bg-white"
               }`}
               style={delay(4 + i)}
             >
               <span
-                className={`grid h-10 w-10 place-items-center rounded-full sm:h-12 sm:w-12 ${
+                className={`grid h-11 w-11 shrink-0 place-items-center rounded-full sm:h-12 sm:w-12 ${
                   i === 0 ? "bg-white text-primary" : "bg-primary text-white"
                 } ${i === 0 ? "lg:mb-auto" : ""}`}
               >
                 <Icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden />
               </span>
-              <h3 className="mt-4 text-lg font-extrabold tracking-tight sm:mt-6 sm:text-3xl">
-                {pillar.title}
-              </h3>
-              <p className="mt-1 text-xs font-medium opacity-75 sm:text-base">{pillar.body}</p>
+              <div className="min-w-0">
+                <h3 className="text-lg font-extrabold tracking-tight sm:mt-6 sm:text-xl md:text-2xl xl:text-3xl">
+                  {pillar.title}
+                </h3>
+                <p className="mt-0.5 text-sm font-medium opacity-75 sm:mt-1 sm:text-base">{pillar.body}</p>
+              </div>
             </li>
           );
         })}
