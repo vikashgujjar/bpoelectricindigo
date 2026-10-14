@@ -66,29 +66,9 @@ export type Industry = { id: string; title: string; body: string };
 
 export const industries: Industry[] = [
   {
-    id: "logistics",
-    title: "Logistics",
-    body: "Shipment tracking, dispatch coordination and proactive customer updates that keep supply chains moving.",
-  },
-  {
-    id: "banking",
-    title: "Banking & Finance",
-    body: "Secure account servicing, KYC processing and payment support for financial institutions.",
-  },
-  {
-    id: "retail",
-    title: "Retail & E-Commerce",
-    body: "Order management, returns and customer care that turn first-time shoppers into loyal fans.",
-  },
-  {
-    id: "real-estate",
-    title: "Real Estate",
-    body: "Lead qualification, appointment booking and documentation support for property teams.",
-  },
-  {
-    id: "healthcare",
-    title: "Healthcare",
-    body: "Patient scheduling, billing assistance and records support handled with strict privacy.",
+    id: "energy",
+    title: "Energy & Utilities",
+    body: "Billing enquiries, outage communication and service requests handled at scale.",
   },
   {
     id: "travel",
@@ -96,9 +76,29 @@ export const industries: Industry[] = [
     body: "Round-the-clock booking help and traveller assistance in multiple languages.",
   },
   {
-    id: "energy",
-    title: "Energy & Utilities",
-    body: "Billing enquiries, outage communication and service requests handled at scale.",
+    id: "healthcare",
+    title: "Healthcare",
+    body: "Patient scheduling, billing assistance and records support handled with strict privacy.",
+  },
+  {
+    id: "real-estate",
+    title: "Real Estate",
+    body: "Lead qualification, appointment booking and documentation support for property teams.",
+  },
+  {
+    id: "retail",
+    title: "Retail & E-Commerce",
+    body: "Order management, returns and customer care that turn first-time shoppers into loyal fans.",
+  },
+  {
+    id: "banking",
+    title: "Banking & Finance",
+    body: "Secure account servicing, KYC processing and payment support for financial institutions.",
+  },
+  {
+    id: "logistics",
+    title: "Logistics",
+    body: "Shipment tracking, dispatch coordination and proactive customer updates that keep supply chains moving.",
   },
 ];
 

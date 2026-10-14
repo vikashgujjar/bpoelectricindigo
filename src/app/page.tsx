@@ -12,12 +12,12 @@ import ContactSection from "@/components/home/ContactSection";
 const sections: SectionConfig[] = [
   { id: "hero", label: "Home", theme: "primary", content: <HeroSection /> },
   { id: "services", label: "Services", theme: "black", content: <ServicesSection /> },
-  { id: "stats", label: "Our Impact", theme: "primary", content: <StatsSection /> },
+  // { id: "stats", label: "Our Impact", theme: "primary", content: <StatsSection /> },
   { id: "about", label: "About Us", theme: "light", content: <AboutSection /> },
   { id: "industries", label: "Industries", theme: "black", content: <IndustriesSection /> },
   { id: "why-us", label: "Why Choose Us", theme: "primary", content: <WhyChooseUsSection /> },
-  { id: "insights", label: "Insights", theme: "black", content: <InsightsSection /> },
-  { id: "testimonials", label: "Testimonials", theme: "light", content: <TestimonialsSection /> },
+  // { id: "insights", label: "Insights", theme: "black", content: <InsightsSection /> },
+  // { id: "testimonials", label: "Testimonials", theme: "light", content: <TestimonialsSection /> },
   { id: "contact", label: "Contact", theme: "black", content: <ContactSection /> },
 ];
 

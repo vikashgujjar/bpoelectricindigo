@@ -8,10 +8,10 @@ import { useSectionNav } from "./SectionNavigation";
 
 const navItems = [
   { to: "services", label: "Services" },
+  { to: "about", label: "About Us" },
   { to: "industries", label: "Industries" },
   { to: "why-us", label: "Why Us" },
-  { to: "insights", label: "Insights" },
-  { to: "about", label: "About Us" },
+  // { to: "insights", label: "Insights" },
   { to: "contact", label: "Contact" },
 ];
 
